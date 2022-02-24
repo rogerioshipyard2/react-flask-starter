@@ -47,6 +47,9 @@ services:
       - './backend/filesystem/entrypoints:/entrypoints:ro'
       - './backend/migrations:/srv/migrations'
       - './backend/src:/srv/src:ro'
+    depends_on:
+      - postgres
+      - redis
 
   postgres:
     image: 'postgres:9.6-alpine'
